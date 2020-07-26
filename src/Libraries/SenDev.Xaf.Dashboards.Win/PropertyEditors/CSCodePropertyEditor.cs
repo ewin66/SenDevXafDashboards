@@ -7,7 +7,6 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.ExpressApp.Win.Editors;
 using DevExpress.Office.Utils;
 using DevExpress.Utils;
-using DevExpress.Portable;
 using DevExpress.XtraRichEdit;
 using DevExpress.XtraRichEdit.API.Native;
 using DevExpress.XtraRichEdit.Services;
@@ -53,7 +52,7 @@ namespace SenDev.Xaf.Dashboards.Win.PropertyEditors
 			richEditControl.Options.HorizontalRuler.Visibility = RichEditRulerVisibility.Hidden;
 			richEditControl.Text = "richEditControl1";
 			richEditControl.Views.DraftView.AllowDisplayLineNumbers = true;
-			richEditControl.Views.DraftView.Padding =   ToPortable(ScaleUtils.ScalePadding(new System.Windows.Forms.Padding(70, 4, 0, 0)));
+			////richEditControl.Views.DraftView.Padding =   ToPortable(ScaleUtils.ScalePadding(new System.Windows.Forms.Padding(70, 4, 0, 0)));
 			richEditControl.InitializeDocument += new EventHandler(this.RichEditControl_InitializeDocument);
 
 
@@ -61,8 +60,8 @@ namespace SenDev.Xaf.Dashboards.Win.PropertyEditors
 			return richEditControl;
 		}
 
-		private static PortablePadding ToPortable(System.Windows.Forms.Padding padding) => 
-			new PortablePadding(padding.Left, padding.Top, padding.Right, padding.Bottom);
+		////private static PortablePadding ToPortable(System.Windows.Forms.Padding padding) => 
+		////	new PortablePadding(padding.Left, padding.Top, padding.Right, padding.Bottom);
 		private void RichEditControl_InitializeDocument(object sender, EventArgs e)
 		{
 			var document = Control.Document;
